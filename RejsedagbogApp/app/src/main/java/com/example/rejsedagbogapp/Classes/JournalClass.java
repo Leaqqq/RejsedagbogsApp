@@ -1,4 +1,4 @@
-package com.example.rejsedagbogapp;
+package com.example.rejsedagbogapp.Classes;
 
 public class JournalClass {
 

@@ -1,4 +1,4 @@
-package com.example.rejsedagbogapp;
+package com.example.rejsedagbogapp.Classes;
 
 import java.util.Date;
 
