@@ -1,8 +1,9 @@
-package com.example.rejsedagbogapp;
+package com.example.rejsedagbogapp.Activities;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
+import com.example.rejsedagbogapp.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
