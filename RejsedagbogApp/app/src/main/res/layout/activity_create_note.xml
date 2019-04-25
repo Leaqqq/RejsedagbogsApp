@@ -2,8 +2,21 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/holo_blue_dark"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="Create Diary Entry"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:titleTextColor="@android:color/white" />
 
     <EditText
         android:id="@+id/titelNote"
@@ -15,7 +28,7 @@
         android:inputType="textPersonName"
         android:padding="10dp" />
 
-    <TextView
+    <EditText
         android:id="@+id/textNote"
         android:layout_width="match_parent"
         android:layout_height="108dp"
@@ -33,7 +46,7 @@
         android:inputType="time"
         android:padding="10dp" />
 
-    <TextView
+    <EditText
         android:id="@+id/GPSNote"
         android:layout_width="match_parent"
         android:layout_height="108dp"
@@ -41,7 +54,7 @@
         android:padding="10dp"
         android:text="GPS locations" />
 
-    <TextView
+    <EditText
         android:id="@+id/WeblinksNote"
         android:layout_width="match_parent"
         android:layout_height="108dp"
