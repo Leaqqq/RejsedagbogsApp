@@ -5,14 +5,16 @@ public class JournalClass {
     public String title;
     public String text;
     public String time; //Maybe this shouldn't be a String
-    public String gpsLocations; //Maybe this shouldn't be a String
+    public String longitude; //Maybe this shouldn't be a String
+    public String latitude;
     public String webLinks; //Maybe this shouldn't be a String
 
-    public JournalClass(String title, String text, String time, String gpsLocations, String webLinks) {
+    public JournalClass(String title, String text, String time, String longitude,String latitude, String webLinks) {
         this.title = title;
         this.text = text;
         this.time = time;
-        this.gpsLocations = gpsLocations;
+        this.longitude=longitude;
+        this.latitude=latitude;
         this.webLinks = webLinks;
     }
 
@@ -40,12 +42,20 @@ public class JournalClass {
         this.time = time;
     }
 
-    public String getGpsLocations() {
-        return gpsLocations;
+    public String getLongitude() {
+        return longitude;
     }
 
-    public void setGpsLocations(String gpsLocations) {
-        this.gpsLocations = gpsLocations;
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
     }
 
     public String getWebLinks() {
