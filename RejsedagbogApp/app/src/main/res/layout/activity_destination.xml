@@ -9,11 +9,4 @@
         android:layout_height="match_parent"
         android:clickable="true"/>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabTravel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:src="@drawable/ic_input_add"
-        android:layout_margin="16dp" />
 </LinearLayout>

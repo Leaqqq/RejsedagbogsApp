@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/titelNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:hint="Title"
+        android:inputType="textPersonName"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/textNote"
+        android:layout_width="match_parent"
+        android:layout_height="108dp"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="Text" />
+
+    <EditText
+        android:id="@+id/timeNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:hint="Time of Entry"
+        android:inputType="time"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/GPSNote"
+        android:layout_width="match_parent"
+        android:layout_height="108dp"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="GPS locations" />
+
+    <TextView
+        android:id="@+id/WeblinksNote"
+        android:layout_width="match_parent"
+        android:layout_height="108dp"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="Weblinks" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="Add diary entry"/>
+    //Need onclick for button
+
+</LinearLayout>
