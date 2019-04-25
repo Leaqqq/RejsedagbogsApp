@@ -4,9 +4,46 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clickable="true"/>
+<EditText
+android:id="@+id/existingDestinationName"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_margin="10dp"
+android:ems="10"
+android:hint="Destination"
+android:inputType="textPersonName"
+android:padding="10dp"
+android:clickable="false"/>
+
+<EditText
+android:id="@+id/existingFromDate"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_margin="10dp"
+android:ems="10"
+android:hint="From date"
+android:inputType="date"
+android:padding="10dp"
+    android:clickable="false"    />
+
+<EditText
+android:id="@+id/existingToDate"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_margin="10dp"
+android:ems="10"
+android:hint="To date"
+android:inputType="date"
+android:padding="10dp"
+    android:clickable="false"/>
+
+<TextView
+android:id="@+id/existingTextViewDescription"
+android:layout_width="match_parent"
+android:layout_height="108dp"
+android:layout_margin="10dp"
+android:padding="10dp"
+android:text="Description"
+    android:clickable="false"/>
 
 </LinearLayout>

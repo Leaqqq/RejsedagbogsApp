@@ -16,5 +16,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
-        android:src="@drawable/ic_input_add"/>
+        android:tint="@android:color/white"
+        android:src="@drawable/ic_add_circle_black_24dp" />
 </LinearLayout>
