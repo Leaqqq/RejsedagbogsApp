@@ -17,46 +17,78 @@
         app:titleTextAppearance="@style/TextAppearance.AppCompat.Display1"
         app:titleTextColor="@android:color/white" />
 
-<EditText
-android:id="@+id/existingDestinationName"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:layout_margin="10dp"
-android:ems="10"
-android:hint="Destination"
-android:inputType="textPersonName"
-android:padding="10dp"
-android:clickable="false"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:layout_marginLeft="10dp"
+        android:padding="10dp"
+        android:text="Destination"
+        android:textSize="20dp" />
 
-<EditText
-android:id="@+id/existingFromDate"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:layout_margin="10dp"
-android:ems="10"
-android:hint="From date"
-android:inputType="date"
-android:padding="10dp"
-    android:clickable="false"    />
+    <EditText
+        android:id="@+id/existingDestinationName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:clickable="false"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="10dp" />
 
-<EditText
-android:id="@+id/existingToDate"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:layout_margin="10dp"
-android:ems="10"
-android:hint="To date"
-android:inputType="date"
-android:padding="10dp"
-    android:clickable="false"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:layout_marginLeft="10dp"
+        android:padding="10dp"
+        android:text="From Date"
+        android:textSize="20dp" />
 
-<TextView
-android:id="@+id/existingTextViewDescription"
-android:layout_width="match_parent"
-android:layout_height="108dp"
-android:layout_margin="10dp"
-android:padding="10dp"
-android:text="Description"
-    android:clickable="false"/>
+    <EditText
+        android:id="@+id/existingFromDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:clickable="false"
+        android:ems="10"
+        android:inputType="date"
+        android:padding="10dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:layout_marginLeft="10dp"
+        android:padding="10dp"
+        android:text="To Date"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/existingToDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:clickable="false"
+        android:ems="10"
+        android:inputType="date"
+        android:padding="10dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:layout_marginLeft="10dp"
+        android:padding="10dp"
+        android:text="Description"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/existingTextViewDescription"
+        android:layout_width="match_parent"
+        android:layout_height="108dp"
+        android:layout_margin="10dp"
+        android:clickable="false"
+        android:padding="10dp" />
 
 </LinearLayout>

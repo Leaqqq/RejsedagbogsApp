@@ -28,7 +28,7 @@
         android:inputType="textPersonName"
         android:padding="10dp" />
 
-    <TextView
+    <EditText
         android:id="@+id/textNote"
         android:layout_width="match_parent"
         android:layout_height="108dp"
@@ -46,7 +46,7 @@
         android:inputType="time"
         android:padding="10dp" />
 
-    <TextView
+    <EditText
         android:id="@+id/GPSNote"
         android:layout_width="match_parent"
         android:layout_height="108dp"
@@ -54,7 +54,7 @@
         android:padding="10dp"
         android:text="GPS locations" />
 
-    <TextView
+    <EditText
         android:id="@+id/WeblinksNote"
         android:layout_width="match_parent"
         android:layout_height="108dp"
