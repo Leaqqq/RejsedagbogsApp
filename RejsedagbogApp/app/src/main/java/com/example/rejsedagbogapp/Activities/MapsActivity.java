@@ -1,4 +1,4 @@
-package com.example.rejsedagbogapp;
+package com.example.rejsedagbogapp.Activities;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
