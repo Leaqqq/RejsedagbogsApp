@@ -54,7 +54,7 @@ public class Storage {
             addTravel(new Travel("Denmark", "02/05/19", "04/05/19", "Going to Billund and visiting Legoland"));
             addTravel(new Travel("England", "01/10/2019", "10/10/2019", "Visiting family in Manchester"));
             addTravel(new Travel("Wakanda", "01/01/2020", "01/04/2019", "Top secret mission"));
-            addTravel(new Travel("Mars", "21/07/2025", "Indefinite", "Visiting family at the Space-X base on Mars"));
+            addTravel(new Travel("Mars", "21/07/2035", "Indefinite", "Visiting family at the Space-X base on Mars"));
         }
     }
 
