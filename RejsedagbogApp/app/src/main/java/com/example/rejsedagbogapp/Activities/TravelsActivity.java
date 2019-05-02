@@ -50,7 +50,7 @@ public class TravelsActivity extends AppCompatActivity {
             case REQUEST_CREATE_TRAVEL:
                 switch (resultCode) {
                     case RESULT_OK:
-                        Toast.makeText(this, "Travel succesfully added", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Travel entry succesfully added", Toast.LENGTH_SHORT).show();
                 }
             default:
                 super.onActivityResult(requestCode, resultCode, data);
