@@ -5,14 +5,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.rejsedagbogapp.Adapters.TravelCursorAdapter;
+import com.example.rejsedagbogapp.Database.Storage;
 import com.example.rejsedagbogapp.Database.TravelSQLHelper;
 import com.example.rejsedagbogapp.R;
 
 public class TravelsActivity extends AppCompatActivity {
     private final int REQUEST_CREATE_TRAVEL = 1;
+
+    private TravelCursorAdapter travelAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +24,18 @@ public class TravelsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_travels);
         TravelSQLHelper.setApplicationContext(this);
 
-        travelAdapter=new TravelCursorAdapter(this,
+        travelAdapter = new TravelCursorAdapter(this,
+                R.layout.travel_item,
+                Storage.getInstance().getTravels(),
+                new String[]{"DESTINATION"},
+                new int[]{R.id.travelname},
+                0);
+        ListView travelsListView = findViewById(R.id.travelslw);
+        travelsListView.setAdapter(travelAdapter);
 
+        /*travelsListView.setOnItemClickListener((parent, view, position, id) -> {
+            Intent intent=new Intent(TravelsActivity.this,)
+        });*/
 
     }
 

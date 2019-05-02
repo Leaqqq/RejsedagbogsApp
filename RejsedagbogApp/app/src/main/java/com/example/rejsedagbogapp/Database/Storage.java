@@ -42,7 +42,7 @@ public class Storage {
     public Long addTravel(Travel travel) {
         SQLiteDatabase db = travelSQLHelper.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put("DESTINATION", travel.getDescription());
+        cv.put("DESTINATION", travel.getDestination());
         cv.put("FROMDATE", travel.getFromDate());
         cv.put("TODATE", travel.getEndDate());
         cv.put("DESCRIPTION", travel.getDescription());
@@ -52,6 +52,7 @@ public class Storage {
     private void initStorage() {
         if (getTravels().getCount() == 0) {
             addTravel(new Travel("Danmark", "Idag", "Imorgen", "bliver sjovt"));
+            addTravel(new Travel("England", "Idag", "10/10/2019", "help"));
         }
     }
 

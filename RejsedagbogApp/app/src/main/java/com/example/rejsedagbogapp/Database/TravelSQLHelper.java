@@ -44,12 +44,12 @@ public class TravelSQLHelper extends SQLiteOpenHelper {
                     "TODATE TEXT ," +
                     "DESCRIPTION TEXT)");
 
-            db.execSQL("CREATE TABLE JOURNAL(_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+           /* db.execSQL("CREATE TABLE JOURNAL(_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                     + "TITLE TEXT," +
                     "TEXT TEXT, " +
                     "TIME TEXT ," +
                     "DESCRIPTION TEXT,"+
-                    "FOREIGN KEY (TRAVELId) REFERENCES TRAVEL(_id) ON DELETE CASCADE)");
+                    "FOREIGN KEY (TRAVELId) REFERENCES TRAVEL(_id) ON DELETE CASCADE)");*/
         }else if ( oldVersion < 2) {
             db.execSQL("ALTER TABLE TRAVEL ADD COLUMN DESCRIPTION");
         }
