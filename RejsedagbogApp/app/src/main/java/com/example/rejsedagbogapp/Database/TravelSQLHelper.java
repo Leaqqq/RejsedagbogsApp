@@ -39,17 +39,19 @@ public class TravelSQLHelper extends SQLiteOpenHelper {
     private void updateMyDatabase(SQLiteDatabase db, int oldVersion, int newVersion) {
         if (oldVersion < 1) {
             db.execSQL("CREATE TABLE TRAVEL (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                    + "DESTINATION TEXT," +
+                    + "DESTINATION TEXT, " +
                     "FROMDATE TEXT, " +
-                    "TODATE TEXT ," +
+                    "TODATE TEXT, " +
                     "DESCRIPTION TEXT)");
 
-           /* db.execSQL("CREATE TABLE JOURNAL(_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                    + "TITLE TEXT," +
+            db.execSQL("CREATE TABLE JOURNAL(_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                    + "TITLE TEXT, " +
                     "TEXT TEXT, " +
-                    "TIME TEXT ," +
-                    "DESCRIPTION TEXT,"+
-                    "FOREIGN KEY (TRAVELId) REFERENCES TRAVEL(_id) ON DELETE CASCADE)");*/
+                    "TIME TEXT, " +
+                    "GPS TEXT, "+
+                    "" +
+                    "WEBLINKS TEXT, " +
+                    "FOREIGN KEY (TRAVELId) REFERENCES TRAVEL(_id) ON DELETE CASCADE)");
         }else if ( oldVersion < 2) {
             db.execSQL("ALTER TABLE TRAVEL ADD COLUMN DESCRIPTION");
         }

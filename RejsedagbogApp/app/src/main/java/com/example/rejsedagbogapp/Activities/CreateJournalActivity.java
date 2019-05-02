@@ -7,7 +7,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rejsedagbogapp.Classes.Journal;
-import com.example.rejsedagbogapp.Classes.Travel;
 import com.example.rejsedagbogapp.R;
 
 public class CreateJournalActivity extends AppCompatActivity {
@@ -22,7 +21,7 @@ public class CreateJournalActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_note);
+        setContentView(R.layout.activity_create_journal);
 
         titleET = findViewById(R.id.titelNote);
         textET = findViewById(R.id.textNote);
@@ -31,7 +30,7 @@ public class CreateJournalActivity extends AppCompatActivity {
         weblinksET = findViewById(R.id.WeblinksNote);
     }
 
-    public void saveTravel(View view) {
+    public void saveJournal(View view) {
         String title = titleET.getText().toString();
         if (title.length() == 0) {
             Toast.makeText(this, "Angiv en titel", Toast.LENGTH_LONG).show();
