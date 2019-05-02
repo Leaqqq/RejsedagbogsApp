@@ -68,8 +68,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:onClick="saveJournal"
         android:padding="10dp"
         android:text="Add journal entry"/>
-    //Need onclick for button
 
 </LinearLayout>

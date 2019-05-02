@@ -13,5 +13,7 @@ public class JournalCursorAdapter extends SimpleCursorAdapter {
     @Override
     public void bindView(View view, final Context context, Cursor cursor) {
         super.bindView(view, context, cursor);
+
+        Long id=cursor.getLong(cursor.getColumnIndex("_id"));
     }
 }

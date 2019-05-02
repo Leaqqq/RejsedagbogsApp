@@ -45,6 +45,9 @@
         <activity android:name=".Activities.TravelActivity"
             android:theme="@style/Theme.AppCompat.Light"/>
 
+        <activity android:name=".Activities.JournalActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+
         <activity android:name=".Activities.CreateTravelActivity"
             android:theme="@style/Theme.AppCompat.Light"/>
         <activity android:name=".Activities.CreateJournalActivity"/>
