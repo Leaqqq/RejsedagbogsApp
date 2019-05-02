@@ -14,7 +14,7 @@
         android:background="@android:color/holo_blue_dark"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:title="Create Diary Entry"
+        app:title="Create Journal Entry"
         app:titleTextAppearance="@style/TextAppearance.AppCompat.Display1"
         app:titleTextColor="@android:color/white" />
 
@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:padding="10dp"
-        android:text="Add diary entry"/>
+        android:text="Add journal entry"/>
     //Need onclick for button
 
 </LinearLayout>
