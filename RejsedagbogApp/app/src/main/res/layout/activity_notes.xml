@@ -27,6 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
+        android:onClick="createJournalClick"
         android:layout_margin="16dp"
         android:tint="@android:color/white"
         android:src="@drawable/ic_add_circle_black_24dp" />
