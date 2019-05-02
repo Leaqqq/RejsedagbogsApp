@@ -2,6 +2,7 @@ package com.example.rejsedagbogapp.Classes;
 
 public class Journal {
 
+    public Long id;
     public String title;
     public String text;
     public String time; //Maybe this shouldn't be a String
@@ -13,8 +14,18 @@ public class Journal {
         this.title = title;
         this.text = text;
         this.time = time;
-        this.longitude=longitude;
-        this.latitude=latitude;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.webLinks = webLinks;
+    }
+
+    public Journal(Long id, String title, String text, String time, String longitude, String latitude, String webLinks) {
+        this.id = id;
+        this.title = title;
+        this.text = text;
+        this.time = time;
+        this.longitude = longitude;
+        this.latitude = latitude;
         this.webLinks = webLinks;
     }
 

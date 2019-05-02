@@ -33,6 +33,7 @@ public class TravelSQLHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+
     }
 
     private void updateMyDatabase(SQLiteDatabase db, int oldVersion, int newVersion) {
