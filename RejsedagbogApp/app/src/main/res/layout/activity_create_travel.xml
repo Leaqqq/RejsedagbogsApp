@@ -10,11 +10,15 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar4"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="?attr/actionBarSize"
+
         android:background="@android:color/holo_blue_dark"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:title="Create Travel Destination"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="Create travel"
         app:titleTextAppearance="@style/TextAppearance.AppCompat.Display1"
         app:titleTextColor="@android:color/white" />
 
@@ -57,11 +61,12 @@
         android:text="Description" />
 
     <Button
-        android:id="@+id/addTravelDestinationButton"
+        android:id="@+id/addTravelButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:onClick="saveTravel"
         android:padding="10dp"
         android:text="Add travel destination" />
-        // Create on click
+
 </LinearLayout>

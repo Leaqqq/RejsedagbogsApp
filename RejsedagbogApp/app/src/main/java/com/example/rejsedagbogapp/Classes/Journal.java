@@ -1,6 +1,6 @@
 package com.example.rejsedagbogapp.Classes;
 
-public class JournalClass {
+public class Journal {
 
     public String title;
     public String text;
@@ -9,7 +9,7 @@ public class JournalClass {
     public String latitude;
     public String webLinks; //Maybe this shouldn't be a String
 
-    public JournalClass(String title, String text, String time, String longitude,String latitude, String webLinks) {
+    public Journal(String title, String text, String time, String longitude, String latitude, String webLinks) {
         this.title = title;
         this.text = text;
         this.time = time;
