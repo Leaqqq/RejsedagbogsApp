@@ -33,8 +33,9 @@
         android:layout_width="match_parent"
         android:layout_height="108dp"
         android:layout_margin="10dp"
+        android:hint="Text"
         android:padding="10dp"
-        android:text="Text" />
+        android:textAllCaps="true" />
 
     <EditText
         android:id="@+id/timeNote"
@@ -51,16 +52,16 @@
         android:layout_width="match_parent"
         android:layout_height="108dp"
         android:layout_margin="10dp"
-        android:padding="10dp"
-        android:text="GPS locations" />
+        android:hint="GPS locations"
+        android:padding="10dp" />
 
     <EditText
         android:id="@+id/WeblinksNote"
         android:layout_width="match_parent"
         android:layout_height="108dp"
         android:layout_margin="10dp"
-        android:padding="10dp"
-        android:text="Weblinks" />
+        android:hint="Weblinks"
+        android:padding="10dp" />
 
     <Button
         android:id="@+id/button"
