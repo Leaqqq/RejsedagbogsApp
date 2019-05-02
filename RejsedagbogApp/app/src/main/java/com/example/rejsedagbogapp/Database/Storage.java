@@ -26,12 +26,28 @@ public class Storage {
     private TravelSQLHelper travelSQLHelper = TravelSQLHelper.getInstance();
 
     public Travel getTravel(long id) {
+
         SQLiteDatabase db = travelSQLHelper.getReadableDatabase();
+
         Cursor cursor = db.query("TRAVEL",
                 new String[]{"_id", "DESTINATION", "FROMDATE", "TODATE", "DESCRIPTION"}, "_id=?", new String[]{"" + id}, null, null, null);
-        Travel travel = new TravelCursorWrapper(cursor).getTravel();
-        cursor.close();
+
+        Travel travel=null;
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                Long iD=cursor.getLong(cursor.getColumnIndex("_id"));
+                String destination=cursor.getString(cursor.getColumnIndex("DESTINATION"));
+                String fromDate=cursor.getString(cursor.getColumnIndex("FROMDATE"));
+                String toDate=cursor.getString(cursor.getColumnIndex("TODATE"));
+                String description=cursor.getString(cursor.getColumnIndex("DESCRIPTION"));
+               travel = new Travel(iD,destination,fromDate,toDate,description);
+
+            }
+            cursor.close();
+        }
+
         return travel;
+
     }
 
     public TravelCursorWrapper getTravels() {
