@@ -58,10 +58,16 @@ public class TravelsActivity extends AppCompatActivity {
                 switch (resultCode) {
                     case RESULT_OK:
                         Toast.makeText(this, "Travel entry succesfully added", Toast.LENGTH_SHORT).show();
+                        updateListview();
+                        
                 }
             default:
                 super.onActivityResult(requestCode, resultCode, data);
         }
+    }
+
+    private void updateListview() {
+    travelAdapter.changeCursor(Storage.getInstance().getTravels());
     }
 
 }

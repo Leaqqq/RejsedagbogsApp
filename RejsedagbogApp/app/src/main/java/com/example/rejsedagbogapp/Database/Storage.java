@@ -48,6 +48,15 @@ public class Storage {
         cv.put("DESCRIPTION", travel.getDescription());
         return db.insert("TRAVEL", null, cv);
     }
+    public void updateTravel(Travel travel){
+        SQLiteDatabase db=travelSQLHelper.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("DESTINATION", travel.getDestination());
+        cv.put("FROMDATE", travel.getFromDate());
+        cv.put("TODATE", travel.getEndDate());
+        cv.put("DESCRIPTION", travel.getDescription());
+        db.update("TRAVEL",cv,"_id=?",new String[]{""+travel.getId()});
+    }
 
     private void initStorage() {
         if (getTravels().getCount() == 0) {

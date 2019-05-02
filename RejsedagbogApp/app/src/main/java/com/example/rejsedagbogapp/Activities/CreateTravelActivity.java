@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 
 import com.example.rejsedagbogapp.Classes.Travel;
+import com.example.rejsedagbogapp.Database.Storage;
 import com.example.rejsedagbogapp.R;
 
 public class CreateTravelActivity extends AppCompatActivity {
@@ -52,8 +53,20 @@ public class CreateTravelActivity extends AppCompatActivity {
         } else {
             travel = new Travel(destination, from, to, description);
         }
-        setResult(RESULT_OK);
-        finish();
+        if(updateTravel(travel) != null){
+            setResult(RESULT_OK);
+            finish();
+        }
 
+
+    }
+    public Travel updateTravel(Travel travel){
+
+        if(travel.getId()==null){
+            travel.setId(Storage.getInstance().addTravel(travel));
+        }else{
+            Storage.getInstance().updateTravel(travel);
+        }
+        return travel;
     }
 }
