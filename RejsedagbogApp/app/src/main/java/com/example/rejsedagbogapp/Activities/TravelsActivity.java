@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.rejsedagbogapp.Adapters.TravelCursorAdapter;
+import com.example.rejsedagbogapp.Classes.Travel;
 import com.example.rejsedagbogapp.Database.Storage;
 import com.example.rejsedagbogapp.Database.TravelSQLHelper;
 import com.example.rejsedagbogapp.R;
@@ -33,9 +35,14 @@ public class TravelsActivity extends AppCompatActivity {
         ListView travelsListView = findViewById(R.id.travelslw);
         travelsListView.setAdapter(travelAdapter);
 
-        /*travelsListView.setOnItemClickListener((parent, view, position, id) -> {
-            Intent intent=new Intent(TravelsActivity.this,)
-        });*/
+        travelsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(TravelsActivity.this, TravelActivity.class);
+                intent.putExtra("travel", id);
+                TravelsActivity.this.startActivity(intent);
+            }
+        });
 
     }
 
