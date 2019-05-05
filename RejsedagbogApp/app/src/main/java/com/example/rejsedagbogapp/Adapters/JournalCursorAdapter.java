@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.SimpleCursorAdapter;
 
 public class JournalCursorAdapter extends SimpleCursorAdapter {
-    JournalCursorAdapter(Context context, int layout, Cursor c, String[] from, int[] to, int flags) {
+    public JournalCursorAdapter(Context context, int layout, Cursor c, String[] from, int[] to, int flags) {
         super(context, layout, c, from, to, flags);
     }
 
@@ -14,6 +14,6 @@ public class JournalCursorAdapter extends SimpleCursorAdapter {
     public void bindView(View view, final Context context, Cursor cursor) {
         super.bindView(view, context, cursor);
 
-        Long id=cursor.getLong(cursor.getColumnIndex("_id"));
+
     }
 }

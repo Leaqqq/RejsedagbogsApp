@@ -48,9 +48,10 @@ public class TravelSQLHelper extends SQLiteOpenHelper {
                     + "TITLE TEXT, " +
                     "TEXT TEXT, " +
                     "TIME TEXT, " +
-                    "GPS TEXT, "+
-                    "" +
+                    "LONGITUDE TEXT, "+
+                    "LATITUDE, " +
                     "WEBLINKS TEXT, " +
+                    "TRAVELId INTEGER, "+
                     "FOREIGN KEY (TRAVELId) REFERENCES TRAVEL(_id) ON DELETE CASCADE)");
         }else if ( oldVersion < 2) {
             db.execSQL("ALTER TABLE TRAVEL ADD COLUMN DESCRIPTION");

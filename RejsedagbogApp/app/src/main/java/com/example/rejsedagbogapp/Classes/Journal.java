@@ -2,13 +2,15 @@ package com.example.rejsedagbogapp.Classes;
 
 public class Journal {
 
-    public Long id;
-    public String title;
-    public String text;
-    public String time; //Maybe this shouldn't be a String
-    public String longitude; //Maybe this shouldn't be a String
-    public String latitude;
-    public String webLinks; //Maybe this shouldn't be a String
+    private Long id;
+    private String title;
+    private String text;
+    private String time; //Maybe this shouldn't be a String
+    private String longitude; //Maybe this shouldn't be a String
+    private String latitude;
+    private String webLinks; //Maybe this shouldn't be a String
+    private Travel travel;
+
 
     public Journal(String title, String text, String time, String longitude, String latitude, String webLinks) {
         this.title = title;
@@ -75,6 +77,14 @@ public class Journal {
 
     public void setWebLinks(String webLinks) {
         this.webLinks = webLinks;
+    }
+
+    public void setTravel(Travel travel) {
+        this.travel = travel;
+    }
+
+    public Travel getTravel() {
+        return travel;
     }
 
     @Override

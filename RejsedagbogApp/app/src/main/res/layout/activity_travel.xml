@@ -24,7 +24,8 @@
         android:layout_marginLeft="10dp"
         android:padding="10dp"
         android:text="Destination"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/existingDestinationName"
@@ -34,7 +35,7 @@
         android:layout_marginLeft="10dp"
         android:padding="10dp"
         android:text=""
-        android:textSize="20dp"  />
+        android:textSize="16dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -43,7 +44,8 @@
         android:layout_marginLeft="10dp"
         android:padding="10dp"
         android:text="From Date"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/existingFromDate"
@@ -53,7 +55,7 @@
         android:layout_marginLeft="10dp"
         android:padding="10dp"
         android:text=""
-        android:textSize="20dp"  />
+        android:textSize="16dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -62,7 +64,8 @@
         android:layout_marginLeft="10dp"
         android:padding="10dp"
         android:text="To Date"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/existingToDate"
@@ -72,7 +75,7 @@
         android:layout_marginLeft="10dp"
         android:padding="10dp"
         android:text=""
-        android:textSize="20dp" />
+        android:textSize="16dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -81,7 +84,8 @@
         android:layout_marginLeft="10dp"
         android:padding="10dp"
         android:text="Description"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/existingDescription"
@@ -91,15 +95,15 @@
         android:layout_marginLeft="10dp"
         android:padding="10dp"
         android:text=""
-        android:textSize="20dp" />
+        android:textSize="16dp" />
 
     <Button
         android:id="@+id/viewJournalButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:onClick="viewJournalButton"
+        android:onClick="viewJournalsButton"
         android:padding="10dp"
-        android:text="View journal" />
+        android:text="View journals" />
 
 </LinearLayout>

@@ -16,9 +16,10 @@ public class JournalCursorWrapper extends CursorWrapper {
     String title=getString(getColumnIndex("TITLE"));
     String text=getString(getColumnIndex("TEXT"));
     String time=getString(getColumnIndex("TIME"));
-    String gps=getString(getColumnIndex("LONGITUDE"));
+    String lng=getString(getColumnIndex("LONGITUDE"));
+    String lat=getString(getColumnIndex("LATITUDE"));
     String weblinks=getString(getColumnIndex("WEBLINKS"));
-    return new Journal(id,title,text,time,gps,"",weblinks);
+    return new Journal(id,title,text,time,lng,lat,weblinks);
 
     }
 }

@@ -4,6 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -14,6 +18,7 @@ import com.example.rejsedagbogapp.Classes.Travel;
 import com.example.rejsedagbogapp.Database.Storage;
 import com.example.rejsedagbogapp.Database.TravelSQLHelper;
 import com.example.rejsedagbogapp.R;
+import com.example.rejsedagbogapp.Wrappers.TravelCursorWrapper;
 
 public class TravelsActivity extends AppCompatActivity {
     private final int REQUEST_CREATE_TRAVEL = 1;
@@ -24,6 +29,7 @@ public class TravelsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travels);
+        registerForContextMenu(findViewById(R.id.travelslw));
         TravelSQLHelper.setApplicationContext(this);
 
         travelAdapter = new TravelCursorAdapter(this,
@@ -45,6 +51,32 @@ public class TravelsActivity extends AppCompatActivity {
         });
 
     }
+
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
+        if(v.getId()==R.id.travelslw){
+            ListView lv=(ListView)v;
+            AdapterView.AdapterContextMenuInfo acmi=(AdapterView.AdapterContextMenuInfo) menuInfo;
+            TravelCursorWrapper item=(TravelCursorWrapper)lv.getItemAtPosition(acmi.position);
+            menu.setHeaderTitle("Choose");
+            menu.add("Delete");
+
+        }
+    }
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        Long id=travelAdapter.getItemId(info.position);
+
+        if (item.getTitle() == "Delete") {
+            Storage.getInstance().deleteTravel(id);
+            updateListview();
+        }
+        return true;
+    }
+
+
+
 
     public void createTravelClick(View view) {
         Intent intent = new Intent(this, CreateTravelActivity.class);
