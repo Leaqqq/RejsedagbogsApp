@@ -3,6 +3,7 @@ package com.example.rejsedagbogapp.Activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
@@ -14,7 +15,7 @@ import com.example.rejsedagbogapp.Database.Storage;
 import com.example.rejsedagbogapp.Database.TravelSQLHelper;
 import com.example.rejsedagbogapp.R;
 
-public class JournalsActivity extends Activity {
+public class JournalsActivity extends AppCompatActivity {
     private final int REQUEST_CREATE_JOURNAL = 1;
     private JournalCursorAdapter journalAdapter;
     Travel travel = null;
@@ -27,7 +28,8 @@ public class JournalsActivity extends Activity {
 
         long id = (Long) getIntent().getSerializableExtra("travelID");
         travel = Storage.getInstance().getTravel(id);
-
+        Log.d("id fra travelID","ID'et"+id);
+        Log.d("travel id","id fra travel"+travel.getId());
         journalAdapter = new JournalCursorAdapter(this, R.layout.journal_item, Storage.getInstance().getJournalsFromTravel(travel),
                 new String[]{"TITLE"},
                 new int[]{R.id.journalname}, 0);

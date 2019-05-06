@@ -3,6 +3,7 @@ package com.example.rejsedagbogapp.Database;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.rejsedagbogapp.Classes.Journal;
 import com.example.rejsedagbogapp.Classes.Travel;
@@ -122,22 +123,19 @@ public class Storage {
             Journal journal2=new Journal("Dagbog dag 2","hej dagbog her er tekst igen, det er mig","klokken 18","longitude2","latitude2","et weblink mere");
             Journal journal3=new Journal("Journal3","hej dagbog her er tekst igen, det er mig","klokken 18","longitude2","latitude2","et weblink mere");
 
-            ArrayList<Journal> journalsTest =new ArrayList<>();
-            journalsTest.add(journal2);
-            journalsTest.add(journal3);
-
-            travel2.setJournalsForTravel(journalsTest);
 
 
             travel1.addJournal(journal1);
             travel2.addJournal(journal2);
             travel2.addJournal(journal3);
 
-            addTravel(travel1);
-            addTravel(travel2);
+           travel1.setId(addTravel(travel1));
+           travel2.setId(addTravel(travel2));
 
             addJournal(journal1);
             addJournal(journal2);
+            Log.d("SE HER","travel2 id: "+travel2.getId());
+            Log.d("SE HER2","travel2 id fra journal2:"+journal2.getTravel().getId());
 
         }
     }
