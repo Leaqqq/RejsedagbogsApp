@@ -52,6 +52,25 @@ public class Storage {
         return travel;
 
     }
+    public Journal getJournal(long id) {
+        SQLiteDatabase db = travelSQLHelper.getReadableDatabase();
+        Cursor cursor = db.query("JOURNAL",
+                new String[]{"_id", "TITLE", "TEXT", "TIME", "LONGITUDE", "LATITUDE", "WEBLINKS","TRAVELId"}, "_id=?", new String[]{"" + id}, null, null, null);
+        Journal journal=null;
+        if(cursor.moveToFirst()){
+            Long iD=cursor.getLong(cursor.getColumnIndex("_id"));
+            String title=cursor.getString(cursor.getColumnIndex("TITLE"));
+            String text=cursor.getString(cursor.getColumnIndex("TEXT"));
+            String time=cursor.getString(cursor.getColumnIndex("TIME"));
+            String longitude=cursor.getString(cursor.getColumnIndex("LONGITUDE"));
+            String latitude=cursor.getString(cursor.getColumnIndex("LATITUDE"));
+            String weblinks=cursor.getString(cursor.getColumnIndex("WEBLINKS"));
+            Long travelid=cursor.getLong(cursor.getColumnIndex("TRAVELId"));
+            journal=new Journal(iD,title,text,time,longitude,latitude,weblinks);
+        }
+        cursor.close();
+        return journal;
+    }
 
     public TravelCursorWrapper getTravels() {
         SQLiteDatabase db = travelSQLHelper.getReadableDatabase();
@@ -85,14 +104,6 @@ public class Storage {
         return db.delete("TRAVEL", "_id = ?", new String[]{"" + id}) > 0;
     }
 
-    public Journal getJournal(long id) {
-        SQLiteDatabase db = travelSQLHelper.getReadableDatabase();
-        Cursor cursor = db.query("JOURNAL",
-                new String[]{"_id", "TITLE", "TEXT", "TIME", "LONGITUDE", "LATITUDE", "WEBLINKS"}, "_id=?", new String[]{"" + id}, null, null, null);
-        Journal journal = new JournalCursorWrapper(cursor).getJournal();
-        cursor.close();
-        return journal;
-    }
 
     public JournalCursorWrapper getJournalsFromTravel(Travel travel) {
         SQLiteDatabase db = travelSQLHelper.getReadableDatabase();
@@ -110,6 +121,7 @@ public class Storage {
         cv.put("LONGITUDE", journal.getLongitude());
         cv.put("LATITUDE", journal.getLatitude());
         cv.put("WEBLINKS", journal.getWebLinks());
+        cv.put("TRAVELId",journal.getTravel().getId());
         return db.insert("JOURNAL", null, cv);
     }
 
@@ -118,10 +130,11 @@ public class Storage {
         if (getTravels().getCount() == 0) {
             Travel travel1=new Travel("Denmark", "02/05/19", "04/05/19", "Going to Billund and visiting Legoland");
             Travel travel2=new Travel("England", "01/10/2019", "10/10/2019", "Visiting family in Manchester");
+            Travel travel3=new Travel("Portugal", "01/10/2019", "10/10/2019", "Visiting family in Portugal");
 
-            Journal journal1=new Journal("Dagbog dag 1","hej dagbog her er tekst","klokken 10","longitude","latitude","et weblink");
-            Journal journal2=new Journal("Dagbog dag 2","hej dagbog her er tekst igen, det er mig","klokken 18","longitude2","latitude2","et weblink mere");
-            Journal journal3=new Journal("Journal3","hej dagbog her er tekst igen, det er mig","klokken 18","longitude2","latitude2","et weblink mere");
+            Journal journal1=new Journal("Dagbog dag 1","hej dagbog her er tekst","klokken 10","56.2639","9.5018","et weblink");
+            Journal journal2=new Journal("Dagbog dag 2","hej dagbog her er tekst igen, det er mig","klokken 18","51.5074","0.1278","https://en.wikipedia.org/wiki/Great_Britain");
+            Journal journal3=new Journal("Journal3","hej dagbog her er tekst igen, det er mig, jeg har haft en god dag i dag ved stranden.","klokken 18","-34","151","www.google.com");
 
 
 
@@ -131,9 +144,12 @@ public class Storage {
 
            travel1.setId(addTravel(travel1));
            travel2.setId(addTravel(travel2));
+           travel3.setId(addTravel(travel3));
 
             addJournal(journal1);
             addJournal(journal2);
+            addJournal(journal3);
+
             Log.d("SE HER","travel2 id: "+travel2.getId());
             Log.d("SE HER2","travel2 id fra journal2:"+journal2.getTravel().getId());
 

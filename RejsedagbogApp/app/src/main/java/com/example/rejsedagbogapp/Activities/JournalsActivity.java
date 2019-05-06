@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ public class JournalsActivity extends AppCompatActivity {
     private final int REQUEST_CREATE_JOURNAL = 1;
     private JournalCursorAdapter journalAdapter;
     Travel travel = null;
+    Long id=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,7 @@ public class JournalsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_journals);
         TravelSQLHelper.setApplicationContext(this);
 
-        long id = (Long) getIntent().getSerializableExtra("travelID");
+        id = (Long) getIntent().getSerializableExtra("travelID");
         travel = Storage.getInstance().getTravel(id);
         Log.d("id fra travelID","ID'et"+id);
         Log.d("travel id","id fra travel"+travel.getId());
@@ -38,12 +40,23 @@ public class JournalsActivity extends AppCompatActivity {
         journalsLw.setAdapter(journalAdapter);
         Log.d("KIG HER","TEST"+travel.getJournalsForTravel().toString());
 
+        journalsLw.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(JournalsActivity.this,JournalActivity.class);
+                intent.putExtra("journal",id);
+                JournalsActivity.this.startActivity(intent);
+
+            }
+        });
+
 
 
     }
 
     public void createJournalClick(View view) {
         Intent intent = new Intent(this, CreateJournalActivity.class);
+        intent.putExtra("travelID",id);
         startActivityForResult(intent, REQUEST_CREATE_JOURNAL);
     }
 
@@ -54,9 +67,15 @@ public class JournalsActivity extends AppCompatActivity {
                 switch (resultCode) {
                     case RESULT_OK:
                         Toast.makeText(this, "Journal entry succesfully added", Toast.LENGTH_SHORT).show();
+                        updateListview();
+
                 }
             default:
                 super.onActivityResult(requestCode, resultCode, data);
         }
+    }
+
+    private void updateListview() {
+        journalAdapter.changeCursor(Storage.getInstance().getJournalsFromTravel(travel));
     }
 }

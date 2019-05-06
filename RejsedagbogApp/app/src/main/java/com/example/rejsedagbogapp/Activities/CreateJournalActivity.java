@@ -7,6 +7,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rejsedagbogapp.Classes.Journal;
+import com.example.rejsedagbogapp.Classes.Travel;
+import com.example.rejsedagbogapp.Database.Storage;
 import com.example.rejsedagbogapp.R;
 
 public class CreateJournalActivity extends AppCompatActivity {
@@ -15,18 +17,25 @@ public class CreateJournalActivity extends AppCompatActivity {
     private TextView titleET;
     private TextView textET;
     private TextView timeET;
-    private TextView gpsET;
+    private TextView longtitudeET;
+    private TextView latitudeET;
     private TextView weblinksET;
+    private Long id=null;
+    private Travel travel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_journal);
+        id=(Long)getIntent().getSerializableExtra("travelID");
+        travel= Storage.getInstance().getTravel(id);
 
         titleET = findViewById(R.id.titelNote);
         textET = findViewById(R.id.textNote);
         timeET = findViewById(R.id.timeNote);
-        gpsET = findViewById(R.id.GPSNote);
+        longtitudeET = findViewById(R.id.longitudeNote);
+        latitudeET=findViewById(R.id.LatitudeNote);
+
         weblinksET = findViewById(R.id.WeblinksNote);
     }
 
@@ -38,19 +47,32 @@ public class CreateJournalActivity extends AppCompatActivity {
         }
         String text = textET.getText().toString();
         String time = timeET.getText().toString();
-        String gps = gpsET.getText().toString();
+        String longtitude = longtitudeET.getText().toString();
+        String latitude=latitudeET.getText().toString();
         String weblinks = weblinksET.getText().toString();
         Journal journal = currentJournal;
         if (journal != null) {
             journal.setTitle(title);
             journal.setText(text);
             journal.setTime(time);
-            journal.setLatitude(gps); //Mangler at få sat longitude, eller ændret måden det bliver sat op på.
+            journal.setLongitude(longtitude);
+            journal.setLatitude(latitude);
             journal.setWebLinks(weblinks);
+            journal.setTravel(travel);
         } else {
-            journal = new Journal(title, text, time, gps,"0",weblinks);
+            journal = new Journal(title, text, time, longtitude,latitude,weblinks);
+            journal.setTravel(travel);
         }
-        setResult(RESULT_OK);
-        finish();
+        if(updateJournal(journal) !=null){
+            setResult(RESULT_OK);
+            finish();
+        }
+    }
+
+    public Journal updateJournal(Journal journal){
+        if(journal.getId()==null){
+            journal.setId(Storage.getInstance().addJournal(journal));
+        }
+        return journal;
     }
 }

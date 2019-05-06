@@ -3,6 +3,7 @@ package com.example.rejsedagbogapp.Activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -71,6 +72,10 @@ public class TravelsActivity extends AppCompatActivity {
         if (item.getTitle() == "Delete") {
             Storage.getInstance().deleteTravel(id);
             updateListview();
+            View contextView = findViewById(R.id.travelslw);
+
+            Snackbar.make(contextView, "Rejse slettet", Snackbar.LENGTH_SHORT)
+                    .show();
         }
         return true;
     }

@@ -31,7 +31,7 @@
     <EditText
         android:id="@+id/textNote"
         android:layout_width="match_parent"
-        android:layout_height="108dp"
+        android:layout_height="90dp"
         android:layout_margin="10dp"
         android:hint="Text"
         android:padding="10dp"
@@ -48,19 +48,29 @@
         android:padding="10dp" />
 
     <EditText
-        android:id="@+id/GPSNote"
+        android:id="@+id/longitudeNote"
         android:layout_width="match_parent"
-        android:layout_height="108dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="GPS locations"
+        android:ems="10"
+        android:hint="Longitude"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/LatitudeNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Latitude"
+        android:inputType="numberDecimal"
         android:padding="10dp" />
 
     <EditText
         android:id="@+id/WeblinksNote"
         android:layout_width="match_parent"
-        android:layout_height="108dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Weblinks"
+        android:hint="Weblink"
         android:padding="10dp" />
 
     <Button

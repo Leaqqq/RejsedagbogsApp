@@ -74,6 +74,13 @@ public class Journal {
     public String getWebLinks() {
         return webLinks;
     }
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public void setWebLinks(String webLinks) {
         this.webLinks = webLinks;

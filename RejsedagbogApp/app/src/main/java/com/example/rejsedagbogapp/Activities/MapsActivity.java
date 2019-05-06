@@ -3,6 +3,8 @@ package com.example.rejsedagbogapp.Activities;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
+import com.example.rejsedagbogapp.Classes.Journal;
+import com.example.rejsedagbogapp.Database.Storage;
 import com.example.rejsedagbogapp.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -14,11 +16,21 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private String longtitude=null;
+    private String langtitude=null;
+    private String title=null;
+    private Long id=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+        id=(Long)getIntent().getSerializableExtra("journalID");
+        Journal journal1= Storage.getInstance().getJournal(id);
+        longtitude=journal1.getLongitude();
+        langtitude=journal1.getLatitude();
+        title=journal1.getTitle();
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -38,10 +50,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        Double longitudeInt=Double.parseDouble(longtitude);
+        Double lantitudeInt=Double.parseDouble(langtitude);
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng marker = new LatLng(longitudeInt, lantitudeInt);
+        mMap.addMarker(new MarkerOptions().position(marker).title(title));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(marker));
     }
 }

@@ -22,69 +22,84 @@
         android:layout_height="wrap_content"
         android:layout_margin="0dp"
         android:layout_marginLeft="10dp"
-        android:padding="10dp"
-        android:text="Title"
-        android:textSize="20dp" />
 
-    <EditText
+        android:text="Title"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/titelNote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:padding="10dp" />
+        android:padding="10dp"
+        android:textSize="16dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="0dp"
         android:layout_marginLeft="10dp"
-        android:padding="10dp"
-        android:text="Text"
-        android:textSize="20dp" />
 
-    <EditText
+        android:text="Text"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/textNote"
         android:layout_width="match_parent"
-        android:layout_height="108dp"
+        android:layout_height="75dp"
         android:layout_margin="10dp"
         android:clickable="false"
-        android:padding="10dp" />
+        android:padding="10dp"
+        android:textSize="16dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="0dp"
         android:layout_marginLeft="10dp"
-        android:padding="10dp"
-        android:text="Time of Entry"
-        android:textSize="20dp" />
 
-    <EditText
+        android:text="Time of Entry"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/timeNote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:ems="10"
         android:inputType="time"
-        android:padding="10dp" />
+        android:padding="10dp"
+        android:textSize="16dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="0dp"
         android:layout_marginLeft="10dp"
-        android:padding="10dp"
-        android:text="GPS Location"
-        android:textSize="20dp" />
 
-    <EditText
+        android:text="GPS Location"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/GPSNote"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:padding="10dp" />
+        android:padding="10dp"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/ShowOnMapButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="viewOnMapButton"
+        android:text="Show on Map" />
 
     <TextView
         android:layout_width="match_parent"
@@ -92,13 +107,16 @@
         android:layout_margin="0dp"
         android:layout_marginLeft="10dp"
         android:padding="10dp"
-        android:text="Web Links"
-        android:textSize="20dp" />
+        android:text="Web Link"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
-    <EditText
+    <TextView
         android:id="@+id/WeblinksNote"
         android:layout_width="match_parent"
         android:layout_height="83dp"
         android:layout_margin="10dp"
-        android:padding="10dp" />
+        android:autoLink="web"
+        android:padding="10dp"
+        android:textSize="16dp" />
 </LinearLayout>
